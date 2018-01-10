@@ -1,0 +1,11 @@
+.map-view {
+    position: relative;
+    background-color: #000000;
+    height: calc(100% - 120px);
+    width: 100%;
+}
+
+.map-view__street-view {
+    position: absolute;
+    top: 60px;
+}

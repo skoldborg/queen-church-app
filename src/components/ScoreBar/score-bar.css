@@ -1,0 +1,17 @@
+.score-bar {
+    position: absolute;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #F2D134;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    z-index: 10;
+}
+
+.score-bar__label {
+    font-size: 22px;
+    line-height: 60px;
+    font-weight: 400;
+    margin: 0;
+}

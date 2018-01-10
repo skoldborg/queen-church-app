@@ -1,0 +1,10 @@
+.button {
+    display: inline-block;
+    background-color: transparent;
+    padding: 1rem;
+    font-family: 'Gloria Hallelujah';
+    font-size: 1.2rem;
+    color: #000;
+    border: 2px solid #000;
+    background-color: none;
+}
