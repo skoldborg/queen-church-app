@@ -11,6 +11,11 @@ class Game extends Component {
     constructor(props) {
         super();
         this.props = props;
+
+        // Redirect user to start screen on reload
+        if (this.props.game.round === 0) {
+            this.props.history.push('/');
+        }
     }
 
     render() {

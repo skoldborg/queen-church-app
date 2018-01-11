@@ -15,12 +15,7 @@ class Home extends Component {
         this.props = props;
     }
 
-    test() {
-        console.log('hello');
-    }
-
-    render() {
-        
+    render() {   
         return (
             <div className="home">
                 <div className="home__inner">
