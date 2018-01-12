@@ -13,16 +13,43 @@ class AnswerBar extends Component {
     }
 
     advanceGame(answer) {
+        this.animateAnswers();
         this.props.actions.advanceGame(answer);
+    }
+
+    animateAnswers() {
+        const btns = document.querySelectorAll('.answer-bar__button');
+
+        btns.forEach((btn, i) => {
+            const game = this.props.game;
+            const correctAnswer = game.currentLocation.street;
+            let btnValue = btn.getAttribute('data-value');
+            
+            if (btnValue === correctAnswer) {
+                btn.classList.add('answer-bar__button--correct');
+                
+                setTimeout(() => {
+                    btn.classList.remove('answer-bar__button--correct');
+                }, 200);
+            } else {
+                btn.classList.add('answer-bar__button--incorrect');
+
+                setTimeout(() => {
+                    btn.classList.remove('answer-bar__button--incorrect');
+                }, 200);
+            }
+
+            
+        })
     }
 
     render() {
         return(
             <div className="answer-bar">
-                <div className="answer-bar__button" onClick={ () => this.advanceGame('Drottninggatan') }>
+                <div className="answer-bar__button" data-value="Drottninggatan" onClick={ () => this.advanceGame('Drottninggatan') }>
                     <QueenIcon />
                 </div>
-                <div className="answer-bar__button" onClick={ () => this.advanceGame('Kyrkogatan') }>
+                <div className="answer-bar__button" data-value="Kyrkogatan" onClick={ () => this.advanceGame('Kyrkogatan') }>
                     <ChurchIcon />
                 </div>
             </div>
